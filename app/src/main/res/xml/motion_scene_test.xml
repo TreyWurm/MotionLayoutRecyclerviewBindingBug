@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        app:constraintSetEnd="@id/half_state"
+        app:constraintSetStart="@id/base_state">
+
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:touchAnchorId="@id/rv_items" />
+    </Transition>
+
+
+
+    <!-- ======================================================================================= -->
+    <!-- Base -->
+    <ConstraintSet android:id="@+id/base_state">
+
+        <Constraint android:id="@+id/tv_title">
+            <Layout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:fontFamily="sans-serif-medium"
+                android:outlineProvider="none"
+                app:layout_constraintTop_toTopOf="parent" />
+        </Constraint>
+
+
+        <Constraint android:id="@id/rv_items">
+            <Layout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:outlineProvider="none"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title" />
+        </Constraint>
+
+    </ConstraintSet>
+
+
+    <!-- ======================================================================================= -->
+    <!-- Half -->
+    <ConstraintSet
+        android:id="@+id/half_state"
+        app:deriveConstraintsFrom="@id/base_state">
+
+        <Constraint android:id="@+id/tv_title">
+            <Layout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:fontFamily="sans-serif-medium"
+                android:outlineProvider="none"
+                app:layout_constraintBottom_toTopOf="parent" />
+        </Constraint>
+
+    </ConstraintSet>
+
+</MotionScene>
