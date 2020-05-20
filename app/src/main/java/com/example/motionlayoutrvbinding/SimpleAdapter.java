@@ -34,7 +34,7 @@ public class SimpleAdapter extends RecyclerView.Adapter<SimpleAdapter.PlanetView
 
     @Override
     public int getItemCount() {
-        return 20;
+        return 2000;
     }
 
 
